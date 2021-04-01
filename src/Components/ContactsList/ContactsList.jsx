@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
-import { deleteContact } from '../../redux/contactsItems/contacts-actions';
+import { deleteContact } from '../../redux/contactsItems/contacts-operations';
 
 import ContactsItem from './ContactItem';
 

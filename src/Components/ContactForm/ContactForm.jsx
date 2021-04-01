@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 
-import { addContact } from '../../redux/contactsItems/contacts-actions';
+import { addContact } from '../../redux/contactsItems/contacts-operations';
 
 import { v4 as uuidv4 } from 'uuid';
 
