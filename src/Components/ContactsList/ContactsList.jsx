@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 
 import { deleteContact } from '../../redux/contactsItems/contacts-operations';
 
+import { getFilteredContacts } from '../../redux/contactsItems/contacts-selectors';
+
 import ContactsItem from './ContactItem';
 
 import styles from './ContactsList.module.css';
@@ -30,10 +32,8 @@ ContactsList.propTypes = {
   deleteOnClick: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ contacts: { items, filter } }) => ({
-  contacts: items.filter(
-    ({ name }) => name && name.toLowerCase().includes(filter.toLowerCase()),
-  ),
+const mapStateToProps = state => ({
+  contacts: getFilteredContacts(state),
 });
 
 const mapDispatchToProps = dispatch => ({

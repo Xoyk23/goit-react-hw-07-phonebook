@@ -32,11 +32,12 @@ const addContact = contact => async dispatch => {
     .catch(error => dispatch(addContactError(error)));
 };
 
-const deleteContact = id => async dispatch => {
+const deleteContact = contactId => async dispatch => {
   dispatch(deleteContactRequest());
+
   axios
-    .delete(`contacts/${id}`)
-    .then(data => dispatch(deleteContactSucces(data)))
+    .delete(`/contacts/${contactId}`)
+    .then(({ data }) => dispatch(deleteContactSucces(data)))
     .catch(error => dispatch(deleteContactError(error)));
 };
 
